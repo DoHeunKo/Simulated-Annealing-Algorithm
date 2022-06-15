@@ -111,25 +111,27 @@ step_size :이웃해를 찾는 기준
 
 ## 모수 값 추정 (추정된 모수 값이 적절한지) 
 ***반복 수를 다르게 했을 경우***  
-iter=1000 , temperature = 1000  
+> iter=1000 , temperature = 1000  
 ![image](https://user-images.githubusercontent.com/98294597/173920727-50ef36a4-abd0-41db-ab6a-2b1fc79eed2e.png)
 
-iter=10000, temperature = 1000  
+> iter=10000, temperature = 1000  
 ![image](https://user-images.githubusercontent.com/98294597/173920766-f3119b87-7302-4be3-8557-1fc3849e17f8.png)
 
 
-***온도 를 다르게 했을 경우***  
-iter = 1000, temperature = 100    
+***온도를 다르게 했을 경우***  
+> iter = 1000, temperature = 100    
 ![image](https://user-images.githubusercontent.com/98294597/173920824-454cdbcb-b342-47fc-98dc-00a0057ab533.png)
 
 
-iter = 1000, temperature = 2000    
+> iter = 1000, temperature = 2000    
 ![image](https://user-images.githubusercontent.com/98294597/173920869-48abd8d4-6e8e-4f8d-88f5-464baa42430b.png)
 
 
 ***이웃해의 범위를 다르게 했을 경우***  
-step_size = 0.1  
+> step_size = 0.1  
+![image](https://user-images.githubusercontent.com/98294597/173922034-e66d92a8-eb1c-4b6c-ab0e-4e2c889a4e7a.png)
 
-step_size = 0.01  
+> step_size = 0.01  
+![image](https://user-images.githubusercontent.com/98294597/173921613-86c0efeb-7b00-491a-a4df-9885215430a8.png)
 
 ## 최적화 과정에 대한 분석(에러 감소 경향 표현)  
