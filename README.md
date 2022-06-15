@@ -112,13 +112,17 @@ step_size :이웃해를 찾는 기준
 ## 모수 값 추정 (추정된 모수 값이 적절한지) 
 ***반복 수를 다르게 했을 경우***
 iter=1000 , temperature = 1000
+![image](https://user-images.githubusercontent.com/98294597/173910333-b2e134b8-84bc-4b01-b935-d0df2aab0f3e.png)
 
 iter=10000, temperature = 1000
+![image](https://user-images.githubusercontent.com/98294597/173912504-8ce4959e-d1ff-40de-ae53-2530fea3c6b6.png)
 
 ***온도 를 다르게 했을 경우***
 iter = 1000, temperature = 100  
+![image](https://user-images.githubusercontent.com/98294597/173918393-27fb243a-4ce0-42b9-a946-c65b8d3082aa.png)
 
 iter = 1000, temperature = 2000  
+![image](https://user-images.githubusercontent.com/98294597/173919048-d188d2c4-e3d1-49cd-b015-7f9858592e69.png)
 
 ***이웃해의 범위를 다르게 했을 경우***  
 step_size = 0.1  
