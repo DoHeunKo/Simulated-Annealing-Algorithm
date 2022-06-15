@@ -21,7 +21,8 @@
 5 : 건강 위협이 높은 기온 장시간 산책을 피하세요  
 ```
 
-![](./image/reg_eq.png)
+![](![reg_eq](https://user-images.githubusercontent.com/98294597/173908978-3631917b-a802-4aa1-b6e2-24a11d01c416.png)
+)
 
 ```
 >>[a0 a1]  
