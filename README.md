@@ -160,8 +160,11 @@ double neighbor_y=-0.16*neighbor_x+2.57;
 ![image](https://user-images.githubusercontent.com/98294597/174037074-ebffdd6f-26f6-44af-99b8-a69b9124e89a.png)
 
 ***온도를 다르게 했을 경우*** 
+![image](https://user-images.githubusercontent.com/98294597/174038719-b15589b0-4054-4798-9a16-3837025f7189.png)
 
 ***이웃해의 범위를 다르게 했을 경우***
+![image](https://user-images.githubusercontent.com/98294597/174039146-733b3c58-874c-4e3a-b5e5-847fc31c812e.png)
+
 ## 장단점
 ### 장점  
 * 복잡하고 노이지 데이터나 제약이 많은 비선형 모델을 다룰 수 있다  
