@@ -120,10 +120,10 @@ if(d<0 || rand<p) {
     }
 ```
 * step_size :이웃해를 찾는 기준  
-- randn.nextGaussian() 함수를 이용해 랜덤으로 정규 분포(평균 0, 표준편차 1)를 사용해서 지역적인 이웃만을 검색     
-- 정규분포 : 평균에 가까울수록 발생할 확률이 높고 평균에서 멀어질수록 발생할 확률이 적은 현상  
-- 확률적 측면에서 알고리즘의 진행에 따라 이웃의 랜덤 반경에 대한 기대치는 감소한다.  
-- 현재의 후보해의 x값에 대해 정규분포값에 step_size를 곱해 평균이 현재 지점이고 표준편차가 step_size로 정의되는 이웃해를 선정  
+-randn.nextGaussian() 함수를 이용해 랜덤으로 정규 분포(평균 0, 표준편차 1)를 사용해서 지역적인 이웃만을 검색       
+-정규분포 : 평균에 가까울수록 발생할 확률이 높고 평균에서 멀어질수록 발생할 확률이 적은 현상    
+-확률적 측면에서 알고리즘의 진행에 따라 이웃의 랜덤 반경에 대한 기대치는 감소한다.    
+-현재의 후보해의 x값에 대해 정규분포값에 step_size를 곱해 평균이 현재 지점이고 표준편차가 step_size로 정의되는 이웃해를 선정    
 ```
 Random randn = new Random(seed);
 double neighbor_x=current_x+ randn.nextGaussian()*step_size;
@@ -138,7 +138,7 @@ double neighbor_y=-0.16*neighbor_x+2.57;
 > iter=10000, temperature = 1000  
 ![image](https://user-images.githubusercontent.com/98294597/173920766-f3119b87-7302-4be3-8557-1fc3849e17f8.png)
 ---
-반복수가 많으면 최적화 과정에서 값이 크게 벗어나는 경향이 생긴다. 확률적으로 10000개를 반복을 했을 때 700
+
 ***온도를 다르게 했을 경우***  
 > iter = 1000, temperature = 100    
 ![image](https://user-images.githubusercontent.com/98294597/173920824-454cdbcb-b342-47fc-98dc-00a0057ab533.png)
@@ -159,14 +159,20 @@ double neighbor_y=-0.16*neighbor_x+2.57;
 ***반복 수를 다르게 했을 경우***  
 > L : iter =1000  R : iter=10000  
 ![image](https://user-images.githubusercontent.com/98294597/174037074-ebffdd6f-26f6-44af-99b8-a69b9124e89a.png)
+반복수가 많으면 최적화 과정에서 값이 크게 벗어나는 경향이 생긴다.  
+확률적으로 10000개를 반복을 했을 때 700개가 확률적으로 뽑히기 때문에 정도를 평가하는 y값의 범위에서도 크게 벗어나기 때문에 적합한 것처럼 보이진 않는다.  
 
 ***온도를 다르게 했을 경우*** 
 > L : temperature = 100  R : temperature = 2000  
 ![image](https://user-images.githubusercontent.com/98294597/174038719-b15589b0-4054-4798-9a16-3837025f7189.png)
+온도가 높은 경우를 보면 최적화된 값의 폭이 온도가 낮은 경우보다 크지 않다.  
+온도가 낮은 경우는 온도변화가 크지 않기 때문에 높은 확률로 이웃해를 빠르게 찾기 때문에 같은 iteration을 돌더라도 더 많이 선택이 된 것을 볼 수 있다.  
 
 ***이웃해의 범위를 다르게 했을 경우***
 > L : step_size = 0.1  R : step_size = 0.01
 ![image](https://user-images.githubusercontent.com/98294597/174039146-733b3c58-874c-4e3a-b5e5-847fc31c812e.png)
+step_size를 작게 한 경우는 최적화된 해의 폭이 크지 않은 것을 볼 수 있다.  
+다른 조건이 모두 같기 때문에 이웃해를 선택하는 step_size의 영향도 최적해를 구하는데에 결정적인 변수가 될 수가 있다는 것을 알 수 있다.  
 
 ## 장단점
 ### 장점  
