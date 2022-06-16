@@ -120,10 +120,10 @@ if(d<0 || rand<p) {
     }
 ```
 * step_size :이웃해를 찾는 기준  
--  randn.nextGaussian() 함수를 이용해 랜덤으로 정규 분포(평균 0, 표준편차 1)를 사용해서 지역적인 이웃만을 검색   
--  정규분포 : 평균에 가까울수록 발생할 확률이 높고 평균에서 멀어질수록 발생할 확률이 적은 현상
--  확률적 측면에서 알고리즘의 진행에 따라 이웃의 랜덤 반경에 대한 기대치는 감소한다.
--  현재의 후보해의 x값에 대해 정규분포값에 step_size를 곱해 평균이 현재 지점이고 표준편차가 step_size로 정의되는 이웃해를 선정
+- randn.nextGaussian() 함수를 이용해 랜덤으로 정규 분포(평균 0, 표준편차 1)를 사용해서 지역적인 이웃만을 검색     
+- 정규분포 : 평균에 가까울수록 발생할 확률이 높고 평균에서 멀어질수록 발생할 확률이 적은 현상  
+- 확률적 측면에서 알고리즘의 진행에 따라 이웃의 랜덤 반경에 대한 기대치는 감소한다.  
+- 현재의 후보해의 x값에 대해 정규분포값에 step_size를 곱해 평균이 현재 지점이고 표준편차가 step_size로 정의되는 이웃해를 선정  
 ```
 Random randn = new Random(seed);
 double neighbor_x=current_x+ randn.nextGaussian()*step_size;
@@ -138,7 +138,7 @@ double neighbor_y=-0.16*neighbor_x+2.57;
 > iter=10000, temperature = 1000  
 ![image](https://user-images.githubusercontent.com/98294597/173920766-f3119b87-7302-4be3-8557-1fc3849e17f8.png)
 ---
-
+반복수가 많으면 최적화 과정에서 값이 크게 벗어나는 경향이 생긴다. 확률적으로 10000개를 반복을 했을 때 700
 ***온도를 다르게 했을 경우***  
 > iter = 1000, temperature = 100    
 ![image](https://user-images.githubusercontent.com/98294597/173920824-454cdbcb-b342-47fc-98dc-00a0057ab533.png)
@@ -155,8 +155,13 @@ double neighbor_y=-0.16*neighbor_x+2.57;
 > step_size = 0.01  
 ![image](https://user-images.githubusercontent.com/98294597/173921613-86c0efeb-7b00-491a-a4df-9885215430a8.png)
 
-## 최적화 과정에 대한 분석(에러 감소 경향 표현)  
+## 최적화 과정에 대한 분석  
+***반복 수를 다르게 했을 경우*** 
+![image](https://user-images.githubusercontent.com/98294597/174037074-ebffdd6f-26f6-44af-99b8-a69b9124e89a.png)
 
+***온도를 다르게 했을 경우*** 
+
+***이웃해의 범위를 다르게 했을 경우***
 ## 장단점
 ### 장점  
 * 복잡하고 노이지 데이터나 제약이 많은 비선형 모델을 다룰 수 있다  
@@ -165,6 +170,6 @@ double neighbor_y=-0.16*neighbor_x+2.57;
 
 ### 단점
 * 실제 알고리즘으로 바꾸기에는 많은 선택사항이 요구된다.
-* 솔루션에대한 품질과 그것들을 계산하기 위한 시간에 대해 trade-off가 발생한다.
+* 솔루션에대한 품질과 그것들을 계산하기 위한 시간에 대해 trade-off가 발생한다.  
 (tradeoff : 질과 양 가운데 어느 한편을 늘리면 다른 한편은 그만큼 줄어드는 것) 
 * 실험에 사용되는 수들의 정확성이 결과의 품질에 엄청난 영향을 끼칠 수 있다.  
